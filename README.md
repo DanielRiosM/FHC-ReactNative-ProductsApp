@@ -2,6 +2,16 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+
+
+# ProductsApp
+
+## Dev
+
+1. Install dependencies `npm i`
+2. Clonar `.env.template a .env y cambiar la direccion ip a la tuya`
+3. ejecutar `npm start -c`
+
 ## Get started
 
 1. Install dependencies
@@ -48,3 +58,6 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+
