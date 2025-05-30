@@ -1,4 +1,5 @@
-import { productApi } from "../api/productsApi";
+
+import { productApi } from "@/core/api/productsApi";
 import { User } from "../interface/user";
 
 export interface AuthResponse {
@@ -44,10 +45,33 @@ export const authLogin = async (email: string, password: string) => {
     }
 }
 
+export const authRegister = async (email: string, password: string, fullName: string) => {
+
+    email = email.toLowerCase()
+
+    try {
+
+        const { data } = await productApi.post<AuthResponse>('/auth/register', {
+            email,
+            password,
+            fullName,
+        })
+
+        return returnUserToken(data)
+
+    } catch (error) {
+        console.log(error);
+        throw new Error('Cant Register user');
+    }
+
+}
+
 export const authCheckStatus = async () => {
     try {
         const { data } = await productApi.get<AuthResponse>('/auth/check-status')
-        returnUserToken(data)
+        return returnUserToken(data)
+
+
     } catch (error) {
         return null
     }
